@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+/*global require:false, process:false */
+
+var program = require('commander');
+var util = require('util');
+
+program
+    .version('0.1')
+    .usage('[options] <template file>')
+    .option(
+        '-i, --encoding <s>',
+        'specify encoding of template file'
+    )
+    .parse(process.argv);
+
+var JSON4Muggle = require('../index.js');
+JSON4Muggle.createJSONMaker(program.args[0], program.encoding);

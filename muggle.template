@@ -1,0 +1,68 @@
+[name] = 奔驰
+> 厂商名字
+{name}厂商名字
+
+[url] = http://baidu.com
+> 厂商
+<a href="{url}" target="blank">{name}</a>
+
+[place] = 2.3
+> 展馆
+所在展馆：{place}馆
+
+[cars|array]
+> 所有轿车的信息
+<ul>
+  {#this}
+  <li>{this.#example}</li>
+  {/this}
+</ul>
+
+[cars.name] = 奔驰A级
+> 轿车名字
+<p>{this.#parent.name}{this.#parent.model}</p>
+
+[cars.pic]
+> 车子图片
+<img src="{this}" />
+
+[cars.model]
+> 型号
+<p>{this}</p>
+
+[cars.price]
+> 价格
+<p>价格：{this}</p>
+
+[cars.type]
+> 类型
+<p>紧凑车型：{this}</p>
+
+[cars.class]
+> 级别
+<p>级别：{this}</p>
+
+[cars.intro]
+> 简介
+<p>简介：{this}</p>
+
+[cars.other|map]
+> 其他信息
+<ul>
+  {#this}
+  <li>{this.key}：{this.value}</li>
+  {/this}
+</ul>
+
+[intro]
+> 品牌信息
+<div>
+  <img src="{this.pic}" />
+  <p>{this.desc}</p>
+</div>
+
+[intro.pic]
+> 品牌信息的图片地址
+
+[intro.desc]
+> 品牌信息的文字描述
